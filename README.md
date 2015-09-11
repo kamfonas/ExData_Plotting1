@@ -1,5 +1,7 @@
 ## Introduction
 
+This document has been updated to include data transformatino notes. Parts of the original "readme" have been kept as they explain relevant details.
+
 This assignment uses data from
 the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
 Learning Repository</a>, a popular repository for machine learning
@@ -75,55 +77,60 @@ functions.
 
 ## The Plots
 
-Our overall goal here is simply to examine how household energy usage
+The overall goal here is simply to examine how household energy usage
 varies over a 2-day period in February, 2007. Your task is to
 reconstruct the following plots below, all of which were constructed
 using the base plotting system.
 
-The following GitHub repository was cloned and all work was done in it:
-[https://github.com/rdpeng/ExData_Plotting1](https://github.com/rdpeng/ExData_Plotting1)
 
+For each plot:
 
-For each plot you should
-
-* Construct the plot and save it to a PNG file with a width of 480
+* Constructed the plot and saved it to a PNG file with a width of 480
 pixels and a height of 480 pixels.
 
-* Name each of the plot files as `plot1.png`, `plot2.png`, etc.
+* Named each of the plot files as `plot1.png`, `plot2.png`, etc.
 
-* Create a separate R code file (`plot1.R`, `plot2.R`, etc.) that
+* Created a separate R code file (`plot1.R`, `plot2.R`, etc.) that
 constructs the corresponding plot, i.e. code in `plot1.R` constructs
 the `plot1.png` plot. Your code file **should include code for reading
-the data** so that the plot can be fully reproduced. You should also
-include the code that creates the PNG file.
+the data** so that the plot can be fully reproduced. The code that creates the PNG file is included.
 
-* Add the PNG file and R code file to your git repository
-
-When you are finished with the assignment, push your git repository to
-GitHub so that the GitHub version of your repository is up to
-date. There should be four PNG files and four R code files.
+* Both the PNG file and R code files are in the git repository
 
 
-The four plots that you will need to construct are shown below. 
+## Individual Plot Notes 
 
 
 ### Plot 1
 
+The plot was constructed to emulate the following frequency histogram, 
+depicting of Global Active Power
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
 
 
 ### Plot 2
 
+Plot 2 is a line-plot (type="l") emulating this target plot:
+
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
 
 ### Plot 3
 
+This plot is made in three parts. The first set is part of the plot call,
+the other two are added using the line() function. The legend is
+added at the end. 
+
 ![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
 
 
 ### Plot 4
+
+The grid of four plots was set-up in columns. The left plots are similar to 
+Plots 2 adn 3 above. The box around the legend was removed as indicated. 
+At the end the par function resets the original single picture setting. 
+
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
