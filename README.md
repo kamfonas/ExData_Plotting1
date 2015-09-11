@@ -35,11 +35,26 @@ web site</a>:
 
 ## Loading the data
 
+Data loading is coded in a utility file named <b>util.functions.R</b> and includes the following functions:
+<ol><li> <b>download.EPC.data()</b>: The function checks to see if a data directory exists and creates one if it is missing.
+		It then downloads the file from <a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip">Electric power consumption</a> ,
+		unzips the file, and discards the zip file. The function returns the relative file path
+</li><li> <b>augment.EPC.data(downloadedFileName)</b>: This function is optional, and it is used to distinguish various versions of the file downloaded by appending the data to its name
+  		Simply pass the downloaded file name as an argument and the function will return the augmented name. 
+  		Notice that if this functionality is used, multiple files will be retained and may require periodic cleanup. 
+  		This functionality normalizes the name of each file and it may be relevant to track versions of the file if they change often.
+  		This function is not used in the plot scripts.
+</li><li> <b>prep.data.table(filePath)</b>: This function load and prepares a data table using these steps:
+	<ol><li>Loads a data.table using fread() and considering "?" to denote NA values
+	</li><li>Appends a dateTime column
+	</li><li>Filters and discards unneeded rows keeping only "2007-02-01 00:00:00" to "2007-02-03 00:00:00"
+	</li><li> Adds a weekday column based on the timestamp
+	</li><li> Converts coerced character columns by fread to numerics so that they can be used by the plot functions.  
+	</li><li> Return the reference to the resultign Data Table.
+	</li></ol> 
+</li></ol>
 
-
-
-
-When loading the dataset into R, please consider the following:
+The approach used above addresses the considerations put forth by the assignment instructions repeatd below:
 
 * The dataset has 2,075,259 rows and 9 columns. First
 calculate a rough estimate of how much memory the dataset will require
@@ -58,14 +73,14 @@ functions.
 * Note that in this dataset missing values are coded as `?`.
 
 
-## Making Plots
+## The Plots
 
 Our overall goal here is simply to examine how household energy usage
 varies over a 2-day period in February, 2007. Your task is to
 reconstruct the following plots below, all of which were constructed
 using the base plotting system.
 
-First you will need to fork and clone the following GitHub repository:
+The following GitHub repository was cloned and all work was done in it:
 [https://github.com/rdpeng/ExData_Plotting1](https://github.com/rdpeng/ExData_Plotting1)
 
 
